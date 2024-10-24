@@ -1,4 +1,6 @@
 ﻿<UserControl
+    d:DataContext="{d:DesignInstance Type=viewModels:PensamientosVm,
+                                     IsDesignTimeCreatable=True}"
     d:DesignHeight="800"
     d:DesignWidth="1000"
     mc:Ignorable="d"
@@ -7,6 +9,7 @@
     xmlns:components="clr-namespace:Mindfulness.MVVM.Views.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Mindfulness.MVVM.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Border Background="GhostWhite">
         <!--  Base  -->
@@ -66,7 +69,10 @@
                             </StackPanel>
 
                             <!--  Botón Crear  -->
-                            <Button Content="Crear" Grid.Column="6" />
+                            <Button
+                                Command="{Binding CreatePensamientoCommand}"
+                                Content="Crear"
+                                Grid.Column="6" />
                         </Grid>
                     </Border>
                 </Grid>

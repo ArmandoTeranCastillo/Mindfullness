@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using Mindfulness.MVVM.ViewModels;
 
 namespace Mindfulness.MVVM.Views.Controls
 {
@@ -7,6 +8,8 @@ namespace Mindfulness.MVVM.Views.Controls
         public Pensamientos()
         {
             InitializeComponent();
+            PensamientosVm vm = new();
+            DataContext = vm;
         }
     }
 }
