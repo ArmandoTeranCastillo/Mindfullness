@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mindfulness", "Mindfulness\Mindfulness.csproj", "{E38AF04E-7F7B-4105-8BA3-27C49079BA8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMindFulness", "AMindFulness\AMindFulness.csproj", "{E47FA32E-7EF0-49B0-9CE2-BA787C9D4FDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E38AF04E-7F7B-4105-8BA3-27C49079BA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E38AF04E-7F7B-4105-8BA3-27C49079BA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E38AF04E-7F7B-4105-8BA3-27C49079BA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E38AF04E-7F7B-4105-8BA3-27C49079BA8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47FA32E-7EF0-49B0-9CE2-BA787C9D4FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47FA32E-7EF0-49B0-9CE2-BA787C9D4FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47FA32E-7EF0-49B0-9CE2-BA787C9D4FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47FA32E-7EF0-49B0-9CE2-BA787C9D4FDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
