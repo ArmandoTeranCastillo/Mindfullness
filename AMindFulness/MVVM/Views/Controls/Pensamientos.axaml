@@ -6,6 +6,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:AMindFulness.MVVM.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Border Background="GhostWhite">
         <!--  Base  -->
@@ -64,7 +65,10 @@
                             </StackPanel>
 
                             <!--  Botón Crear  -->
-                            <Button Content="Crear" Grid.Column="6" />
+                            <Button
+                                Command="{Binding CreatePensamientoCommand, DataType=viewModels:PensamientosVm}"
+                                Content="Crear"
+                                Grid.Column="6" />
                         </Grid>
                     </Border>
                 </Grid>
