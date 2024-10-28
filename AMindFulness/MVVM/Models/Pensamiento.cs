@@ -12,16 +12,15 @@ namespace AMindFulness.MVVM.Models
         
         [StringLength(800)]
         public string Descripcion { get; set; } = string.Empty;
-        public List<int> Distorsiones { get; set; } = [];
-        public List<int> Etiquetas { get; set; } = [];
+        public List<int>? Distorsiones { get; set; } = [];
+        public List<int>? Etiquetas { get; set; } = [];
         
         [StringLength(800)]
-        public string Reformacion { get; set; } = string.Empty;
+        public string? Reformacion { get; set; } = string.Empty;
         
-        public DateTime Fecha { get; set; } = DateTime.Now;
-        public DateTime FechaModificacion { get; set; } = DateTime.Now;
-        public DateTime FechaReformacion { get; set; } = DateTime.Now;
-        
+        public DateTime? Fecha { get; set; } 
+        public DateTime? FechaModificacion { get; set; } 
+        public DateTime? FechaReformacion { get; set; } 
         
         // Relaciones Directas
         public List<DistorsionCognitiva> DistorsionesCognitivas { get; set; } = [];
