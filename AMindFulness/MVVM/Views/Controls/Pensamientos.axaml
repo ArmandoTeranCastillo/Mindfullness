@@ -1,5 +1,4 @@
 <UserControl
-    Loaded="{Binding LoadDataCommand, DataType=viewModels1:PensamientosVm}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d"

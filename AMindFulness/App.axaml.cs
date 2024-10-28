@@ -1,14 +1,11 @@
 using System;
-using AMindFulness.Data;
 using AMindFulness.Data.Dependencies.ContainerConfiguration;
 using AMindFulness.MVVM.Views;
 using Autofac;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace AMindFulness
 {
@@ -23,8 +20,6 @@ namespace AMindFulness
         
         public override void OnFrameworkInitializationCompleted()
         {
-            ServiceCollection services = new();
-            
             // Cargar configuración desde appsettings.json
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(AppContext.BaseDirectory) // Asegura que el directorio base sea correcto
@@ -39,13 +34,8 @@ namespace AMindFulness
                 throw new ArgumentNullException(null, "La cadena de conexión no puede ser nula");
             }
             
-            // DbContexts
-            services.AddDbContext<Context>(options =>
-                options.UseMySql(connectionString, 
-                    new MySqlServerVersion(new Version(8, 0, 23)))); 
-            
             //Iniciar Inyección de Dependencias
-            Container = ContainerConfigurator.ConfigureContainer();
+            Container = ContainerConfigurator.ConfigureContainer(connectionString);
             
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {

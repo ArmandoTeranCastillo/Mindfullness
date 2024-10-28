@@ -1,8 +1,8 @@
-using AMindFulness.MVVM.ViewModels;
+using System;
 using AMindFulness.MVVM.ViewModels.ViewModels;
 using Autofac;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+using Avalonia.Interactivity;
 
 namespace AMindFulness.MVVM.Views.Controls
 {
@@ -12,6 +12,15 @@ namespace AMindFulness.MVVM.Views.Controls
         {
             InitializeComponent();
             DataContext = App.Container.Resolve<PensamientosVm>();
+            Loaded += OnLoaded;
+        }
+        
+        private void OnLoaded(object? sender, RoutedEventArgs e)
+        {
+            if (DataContext is PensamientosVm viewModel)
+            {
+                viewModel.LoadDataCommand.Execute().Subscribe();
+            }
         }
     }
 }

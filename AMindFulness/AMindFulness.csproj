@@ -23,6 +23,7 @@
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.10" />
         <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.5.0" />
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.5.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
@@ -44,5 +45,11 @@
       <AdditionalFiles Include="MVVM\Views\Controls\ModalPensamiento.axaml" />
       <AdditionalFiles Include="MVVM\Views\Controls\Pensamientos.axaml" />
       <AdditionalFiles Include="MVVM\Views\MainWindow.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 </Project>
