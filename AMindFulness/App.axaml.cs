@@ -1,10 +1,10 @@
 using System;
-using AMindFulness.Data;
+using AMindFulness.Data.Dependencies;
 using AMindFulness.MVVM.Views;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AMindFulness
@@ -20,11 +20,22 @@ namespace AMindFulness
         {
             ServiceCollection services = new();
             
-            //Configurar base de datos
-            services.AddDbContext<Context>(options =>
-                options.UseMySql("Server=sql3.freemysqlhosting.net;Database=sql3741179;User ID=sql3741179;Password=nbmBniYtSG;Port=3306;", 
-                    new MySqlServerVersion(new Version(8, 0, 21))));
+            // Cargar configuración desde appsettings.json
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory) // Asegura que el directorio base sea correcto
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
 
+            // Obtener la cadena de conexión
+            string? connectionString = configuration.GetConnectionString("DefaultConnection");
+            
+            if (connectionString == null)
+            {
+                throw new ArgumentNullException(null, "La cadena de conexión no puede ser nula");
+            }
+            
+            // Configura los servicios
+            services.AddLibraryServices(connectionString);
             
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {

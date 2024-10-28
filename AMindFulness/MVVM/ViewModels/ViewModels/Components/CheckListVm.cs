@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace AMindFulness.MVVM.ViewModels.Components
+namespace AMindFulness.MVVM.ViewModels.ViewModels.Components
 {
     public class CheckListVm
     {

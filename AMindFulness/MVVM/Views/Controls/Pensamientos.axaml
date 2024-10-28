@@ -1,4 +1,5 @@
 <UserControl
+    Loaded="{Binding LoadDataCommand, DataType=viewModels1:PensamientosVm}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d"
@@ -7,7 +8,7 @@
     xmlns:components="clr-namespace:AMindFulness.MVVM.Views.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModels="clr-namespace:AMindFulness.MVVM.ViewModels"
+    xmlns:viewModels1="clr-namespace:AMindFulness.MVVM.ViewModels.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Border Background="GhostWhite">
         <!--  Base  -->
@@ -68,7 +69,7 @@
 
                             <!--  Botón Crear  -->
                             <Button
-                                Command="{Binding CreatePensamientoCommand, DataType=viewModels:PensamientosVm}"
+                                Command="{Binding CreatePensamientoCommand, DataType=viewModels1:PensamientosVm}"
                                 Content="Crear"
                                 Grid.Column="6" />
                         </Grid>

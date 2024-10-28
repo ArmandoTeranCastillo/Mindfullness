@@ -1,4 +1,4 @@
-using AMindFulness.MVVM.ViewModels.Components;
+using AMindFulness.MVVM.ViewModels.ViewModels.Components;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
