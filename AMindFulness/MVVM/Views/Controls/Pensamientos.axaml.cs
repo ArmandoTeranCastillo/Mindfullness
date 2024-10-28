@@ -1,5 +1,6 @@
 using AMindFulness.MVVM.ViewModels;
 using AMindFulness.MVVM.ViewModels.ViewModels;
+using Autofac;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
@@ -10,7 +11,7 @@ namespace AMindFulness.MVVM.Views.Controls
         public Pensamientos()
         {
             InitializeComponent();
-            DataContext = new PensamientosVm();
+            DataContext = App.Container.Resolve<PensamientosVm>();
         }
     }
 }

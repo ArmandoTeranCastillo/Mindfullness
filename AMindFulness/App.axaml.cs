@@ -1,9 +1,12 @@
 using System;
-using AMindFulness.Data.Dependencies;
+using AMindFulness.Data;
+using AMindFulness.Data.Dependencies.ContainerConfiguration;
 using AMindFulness.MVVM.Views;
+using Autofac;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +14,8 @@ namespace AMindFulness
 {
     public class App : Application
     {
+        public static IContainer Container { get; private set; } = null!;
+        
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
@@ -34,8 +39,13 @@ namespace AMindFulness
                 throw new ArgumentNullException(null, "La cadena de conexión no puede ser nula");
             }
             
-            // Configura los servicios
-            services.AddLibraryServices(connectionString);
+            // DbContexts
+            services.AddDbContext<Context>(options =>
+                options.UseMySql(connectionString, 
+                    new MySqlServerVersion(new Version(8, 0, 23)))); 
+            
+            //Iniciar Inyección de Dependencias
+            Container = ContainerConfigurator.ConfigureContainer();
             
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
