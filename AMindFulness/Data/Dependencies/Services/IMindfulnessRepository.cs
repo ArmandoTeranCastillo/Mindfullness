@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AMindFulness.MVVM.Models;
 using AMindFulness.MVVM.Models.DTOs;
 using Microsoft.EntityFrameworkCore;
 
