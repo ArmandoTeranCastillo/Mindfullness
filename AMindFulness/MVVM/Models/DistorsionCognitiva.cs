@@ -9,5 +9,10 @@ namespace AMindFulness.MVVM.Models
         
         [StringLength(300)]
         public string Name { get; set; } = string.Empty;
+
+        public DistorsionCognitiva()
+        {
+            
+        }
     }
 }
