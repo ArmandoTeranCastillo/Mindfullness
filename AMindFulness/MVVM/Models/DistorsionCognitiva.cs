@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AMindFulness.MVVM.Models
@@ -9,10 +10,8 @@ namespace AMindFulness.MVVM.Models
         
         [StringLength(300)]
         public string Name { get; set; } = string.Empty;
-
-        public DistorsionCognitiva()
-        {
-            
-        }
+        
+        // Relaciones Indirectas
+        public ICollection<Pensamiento> Pensamientos { get; set; } = new List<Pensamiento>();
     }
 }

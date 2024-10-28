@@ -22,10 +22,9 @@ namespace AMindFulness.MVVM.Models
         public DateTime FechaModificacion { get; set; } = DateTime.Now;
         public DateTime FechaReformacion { get; set; } = DateTime.Now;
         
-        [ForeignKey(("Distorsiones"))]
-        public List<DistorsionCognitiva> DistorsionesCognitivas { get; set; } = [];
         
-        [ForeignKey(("Etiquetas"))]
+        // Relaciones Directas
+        public List<DistorsionCognitiva> DistorsionesCognitivas { get; set; } = [];
         public List<Etiqueta> EtiquetasPensamiento { get; set; } = [];
     }
 }
