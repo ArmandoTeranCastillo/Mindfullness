@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reactive;
 using System.Threading.Tasks;
 using AMindFulness.Data.Dependencies.Transients;
@@ -12,8 +13,8 @@ namespace AMindFulness.MVVM.ViewModels.ViewModels
     public class PensamientosVm : ViewModelBase
     {
         // Properties
-        private IEnumerable<CatalogoDto> _distorsiones = new List<CatalogoDto>();
-        public IEnumerable<CatalogoDto> Distorsiones
+        private IEnumerable<CheckItem> _distorsiones = new List<CheckItem>();
+        public IEnumerable<CheckItem> Distorsiones
         {
             get => _distorsiones;
             set => this.RaiseAndSetIfChanged(ref _distorsiones, value);
@@ -39,7 +40,12 @@ namespace AMindFulness.MVVM.ViewModels.ViewModels
         
         private async Task LoadData()
         {
-            Distorsiones = await UnitOfWork.MindfulnessRepository.GetDistorsionesAsync();
+            IEnumerable<CatalogoDto> distorsiones = await UnitOfWork.MindfulnessRepository.GetDistorsionesAsync();
+            Distorsiones = distorsiones.Select(i => new CheckItem
+            {
+                Name = i.Name,
+                IsSelected = false
+            });
         }
     }
 }
