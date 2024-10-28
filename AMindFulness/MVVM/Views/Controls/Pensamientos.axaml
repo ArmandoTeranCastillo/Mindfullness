@@ -4,6 +4,7 @@
     mc:Ignorable="d"
     x:Class="AMindFulness.MVVM.Views.Controls.Pensamientos"
     xmlns="https://github.com/avaloniaui"
+    xmlns:components="clr-namespace:AMindFulness.MVVM.Views.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:AMindFulness.MVVM.ViewModels"
@@ -62,6 +63,7 @@
                             <!--  Distorsiones Cognitivas  -->
                             <StackPanel Grid.Column="4">
                                 <Label Content="Distorsiones Cognitivas" FontSize="12" />
+                                <components:CheckList />
                             </StackPanel>
 
                             <!--  Botón Crear  -->
